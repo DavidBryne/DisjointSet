@@ -21,12 +21,12 @@ public class Empire {
         K = k;
         monarchies = new Node[n][m][k];
         numSets = 0;
-        /*DEBUG
+        
         System.out.println("N = " + n);
         System.out.println("M = " + m);
         System.out.println("K = " + k);
         System.out.println("");
-        */
+        
         
     }
     
@@ -37,18 +37,19 @@ public class Empire {
         int n = i % N;
         int m = ((i-n)/N) % M;
         int k = (i - n - m * N)/ M * N;
-        /*DEBUG
+        
         System.out.println("n = " + n);
         System.out.println("m = " + m);
         System.out.println("k = " + k);
         System.out.println("");
-        */
+        
         /*
         int n = i % N;
         int m = i / (N * M);
         int k = (i - (m * N * M)) / M;
         */
         
+        /*
         Node rep;
         
         if(monarchies[n][m][k] == null){
@@ -79,6 +80,7 @@ public class Empire {
         if(k + 1 < K){
             checkAndUnion(rep, monarchies[n][m][k+1]);
         }
+        */
         
     }
     
