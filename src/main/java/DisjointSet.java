@@ -47,7 +47,19 @@ public class DisjointSet{
      * @return number of months separated
      */
     public static int solve(int[][] monarchies, int N, int M, int K){
-        return 0;
+        int result = 0;
+        Empire empire = new Empire(N, M, K);
+        for(int i = monarchies.length - 1; i >= 0; i--){
+            for(int j = 0; j < monarchies[i].length; j++){
+                empire.addSet(monarchies[i][j]);
+            }
+            
+            if(empire.getNumSets() > 1){
+                result++;
+            }
+        }
+        
+        return result;
     }
 
 

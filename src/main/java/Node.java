@@ -9,18 +9,15 @@
  * @author samue
  */
 public class Node {
-    public int value;
     public int rank;
     public Node parent;
     
     public Node(){
-        value = -1;
         rank = 0;
         parent = null;
     }
     
-    public Node(int v, int r, Node p){
-        value = v;
+    public Node(int r, Node p){
         rank = r;
         parent = p;
     } 
@@ -31,14 +28,6 @@ public class Node {
     
     public Node getParent(){
         return parent;
-    }
-    
-    public void setValue(int v){
-        value = v;
-    }
-    
-    public int getValue(){
-        return value;
     }
     
     public void setRank(int r){
