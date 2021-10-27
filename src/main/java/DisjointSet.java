@@ -4,6 +4,19 @@ import java.util.*;
 //Index formula: let n = n index, N = max n, etc.
 //i = n + m * N + k * M * N
 
+/**
+ * This class contains all the main methods of the Disjoint Set, as well as the sort algorithm
+ *
+ * @author Samuel Copeland & David-Bryne Adedeji
+ * @version 1.0
+ * File: DisjointSet.java
+ * Created October 27, 2021
+ * @copyright Cedarville University, its Computer Science faculty, and the
+ * authors.
+ * Summary of Modifications:
+ *
+ * Description: PLS COMPLETE ONCE YOU ARE DONE MODIFYING
+ */
 public class DisjointSet{
 
     //Make a new set
@@ -11,6 +24,7 @@ public class DisjointSet{
         x.setParent(x);
         x.setRank(0);
     }
+
     //Combine two disjoint sets to create a new set
     public static void union(Node x, Node y) {
         Node x_parent = findSet(x);
@@ -64,8 +78,7 @@ public class DisjointSet{
 
 
     public static void main(String[] args) throws IOException{
-        java.io.InputStreamReader inputStream 
-                = new InputStreamReader(System.in);
+        java.io.InputStreamReader inputStream = new InputStreamReader(System.in);
         java.io.BufferedReader stdin = new java.io.BufferedReader(inputStream);
         
         String nextLine;// = stdin.readLine();
@@ -86,7 +99,7 @@ public class DisjointSet{
             l = Integer.parseInt(strNums[3]);
             
             //Iterate over the definitions of the new monarchies and store the
-            //dominions of each monarcy in an array e.g. monarchies[0][1] would
+            //dominions of each monarchy in an array e.g. monarchies[0][1] would
             //represent the second dominion in the first monarchy.
             int[][] monarchies = new int[l][];
             for(int j = 0; j < l; j++){
@@ -98,13 +111,11 @@ public class DisjointSet{
                     monarchies[j][k-1] = Integer.parseInt(dominionsAndNum[k]);
                 }
             }
-            
             answers[i] = solve(monarchies, N, M, K);
         }
         
         for(int i = 0; i < numProblems; i++){
             System.out.println(answers[i]);
         }
-        
     }
 }
