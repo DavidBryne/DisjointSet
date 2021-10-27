@@ -1,12 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
+ * This class represents monarchies that seceded from COBOL
  *
- * @author samue
+ * @author Samuel Copeland & David-Bryne Adedeji
+ * @version 1.0
+ * File: Empire.java
+ * Created October 27, 2021
+ * @copyright Cedarville University, its Computer Science faculty, and the
+ * authors.
+ * Summary of Modifications:
+ *
+ * Description: Contains a 3d array of nodes from monarchies that have seceded
+ * and keeps track of how many disjoint sets there are.
  */
 public class Empire {
     private Node[][][] monarchies;

@@ -2,7 +2,8 @@ import java.io.*;
 import java.util.*;
 
 /**
- * This class contains all the main methods of the Disjoint Set, as well as the sort algorithm
+ * This class contains all the main methods of the Disjoint Set, as well as the
+ * disjoint set methods
  *
  * @author Samuel Copeland & David-Bryne Adedeji
  * @version 1.0
@@ -12,7 +13,9 @@ import java.util.*;
  * authors.
  * Summary of Modifications:
  *
- * Description: PLS COMPLETE ONCE YOU ARE DONE MODIFYING
+ * Description: This class contains the disjoint set methods, makeSet, union,
+ * and findSet. It also contains a method to solve the Galactic Breakup Problem
+ * and handles I/O in the main function.
  */
 
 //Index formula: let n = n index, N = max n, etc.
