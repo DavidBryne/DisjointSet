@@ -21,8 +21,8 @@ public class DisjointSet extends Node{
 
     //Find what set a particular member is in
     public Node findSet(Node x){
-        if(x != getParent()){
-            //setParent(x) = findSet(getParent());
+        if(x != x.getParent()){
+            setParent(findSet(x.getParent()));
         }
         return getParent();
     }
