@@ -76,6 +76,8 @@ public class DisjointSet{
      * @return number of months separated
      */
     public static int solve(int[][] monarchies, int N, int M, int K){
+        //Work backwards through the monarchies seceding and every time the
+        //monarchies are seperated, add 1 to the result.
         int result = 0;
         Empire empire = new Empire(N, M, K);
         for(int i = monarchies.length - 1; i >= 0; i--){
@@ -98,10 +100,8 @@ public class DisjointSet{
                 = new InputStreamReader(System.in);
         java.io.BufferedReader stdin = new java.io.BufferedReader(inputStream);
         
-        String nextLine;
+        String nextLine;        
         
-        //Get the number of problems to solve.
-        int numProblems = 1;
         int answer;
         int N, M, K, l;
         
@@ -109,7 +109,6 @@ public class DisjointSet{
             
         //Get N, M, K, and L
         String[] strNums = nextLine.split(" ");
-
         N = Integer.parseInt(strNums[0]);
         M = Integer.parseInt(strNums[1]);
         K = Integer.parseInt(strNums[2]);
