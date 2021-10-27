@@ -7,16 +7,23 @@ import java.util.*;
 public class DisjointSet extends Node{
 
     //Make a new set
-    public Object makeSet(Object x){
-        return null;
+    public void makeSet(Node x){
+        x.setParent(x);
+        x.setRank(0);
     }
     //Combine two disjoint sets to create a new set
-    public void union(Set x, Set y) {
-    }
+    public void union(Node x, Node y) {
+        Node x_parent = findSet(x);
+        Node y_parent = findSet(y);
 
-    //Print the content of the set
-    public static void printSet(DisjointSet dS){
-
+        if(x_parent.getRank() > y_parent.getRank()){
+            y_parent.setParent(x_parent);
+        }
+        else if(x_parent.getParent() == y_parent){
+            if(x_parent.getRank() == y_parent.getRank()){
+                y_parent.setRank(y_parent.getRank() + 1);
+            }
+        }
     }
 
     //Find what set a particular member is in
