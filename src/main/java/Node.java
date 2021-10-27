@@ -1,12 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  *
- * @author samue
+ * @author Samuel Copeland & David-Bryne Adedeji
+ * @version 1.0
+ * File: DisjointSet.java
+ * Created October 27, 2021
+ * @copyright Cedarville University, its Computer Science faculty, and the
+ * authors.
+ * Summary of Modifications:
+ *
+ * Description: This is the base data structure we use to access and modify the Disjoint Set (based on a linked-list)
+ *
  */
 public class Node {
     public int rank;
