@@ -19,10 +19,12 @@ public class DisjointSet{
         if(x_parent.getRank() > y_parent.getRank()){
             y_parent.setParent(x_parent);
         }
-        else if(x_parent.getParent() == y_parent){
-            if(x_parent.getRank() == y_parent.getRank()){
-                y_parent.setRank(y_parent.getRank() + 1);
-            }
+        else if(x_parent.getRank() < y_parent.getRank()){
+            x_parent.setParent(y_parent);
+        }
+        else{
+            x_parent.setParent(y_parent);
+            y_parent.setRank(y_parent.getRank() + 1);
         }
     }
 
@@ -55,6 +57,7 @@ public class DisjointSet{
             }
             
             if(empire.getNumSets() > 1){
+                
                 result++;
             }
         }
