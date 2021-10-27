@@ -1,6 +1,3 @@
-import java.io.*;
-import java.util.*;
-
 /**
  * This class contains all the main methods of the Disjoint Set, as well as the sort algorithm
  *
