@@ -78,11 +78,17 @@ public class Empire {
     }
     
     private void checkAndUnion(Node a, Node b){
-        Node parentA = DisjointSet.findSet(a);
-        Node parentB = DisjointSet.findSet(b);
-        if(a != null && b != null && parentA != parentB){
-            DisjointSet.union(parentA, parentB);
-            numSets--;
+        Node parentA;
+        Node parentB;
+        
+        if(a != null && b != null){
+            parentA = DisjointSet.findSet(a);
+            parentB = DisjointSet.findSet(b);
+        
+            if(parentA != parentB){
+                DisjointSet.union(parentA, parentB);
+                numSets--;
+            }
         }
     }
     
