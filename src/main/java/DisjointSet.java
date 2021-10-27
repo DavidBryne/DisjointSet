@@ -68,10 +68,10 @@ public class DisjointSet{
                 = new InputStreamReader(System.in);
         java.io.BufferedReader stdin = new java.io.BufferedReader(inputStream);
         
-        String nextLine = stdin.readLine();
+        String nextLine;// = stdin.readLine();
         
         //Get the number of problems to solve.
-        int numProblems = Integer.parseInt(nextLine);
+        int numProblems = 1;//Integer.parseInt(nextLine);
         int[] answers = new int[numProblems];
         int N, M, K, l;
         for(int i = 0; i < numProblems; i++){            
