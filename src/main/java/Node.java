@@ -9,9 +9,9 @@
  * @author samue
  */
 public class Node {
-    private int value;
+    public int value;
     public int rank;
-    private Node parent;
+    public Node parent;
     
     public Node(){
         value = -1;

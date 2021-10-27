@@ -4,9 +4,7 @@ import java.util.*;
 //Index formula: let n = n index, N = max n, etc.
 //i = n + m * N + k * M * N
 
-public class DisjointSet {
-    Map<Object, Object> rank = new HashMap<>();
-    Map<Object, Object> parent = new HashMap<>();
+public class DisjointSet extends Node{
 
     //Make a new set
     public Object makeSet(Object x){
@@ -22,12 +20,11 @@ public class DisjointSet {
     }
 
     //Find what set a particular member is in
-    public Object findSet(Object x){
-        //If x is not the root
-        if (parent.get(x) != x) {
-            parent.put(x, findSet(parent.get(x)));
+    public Node findSet(Node x){
+        if(x != getParent()){
+            //setParent(x) = findSet(getParent());
         }
-        return parent.get(x);
+        return getParent();
     }
     
     /**
