@@ -4,15 +4,15 @@ import java.util.*;
 //Index formula: let n = n index, N = max n, etc.
 //i = n + m * N + k * M * N
 
-public class DisjointSet extends Node{
+public class DisjointSet{
 
     //Make a new set
-    public void makeSet(Node x){
+    public static void makeSet(Node x){
         x.setParent(x);
         x.setRank(0);
     }
     //Combine two disjoint sets to create a new set
-    public void union(Node x, Node y) {
+    public static void union(Node x, Node y) {
         Node x_parent = findSet(x);
         Node y_parent = findSet(y);
 
@@ -27,11 +27,11 @@ public class DisjointSet extends Node{
     }
 
     //Find what set a particular member is in
-    public Node findSet(Node x){
+    public static Node findSet(Node x){
         if(x != x.getParent()){
-            setParent(findSet(x.getParent()));
+            x.setParent(findSet(x.getParent()));
         }
-        return getParent();
+        return x.getParent();
     }
     
     /**
