@@ -36,11 +36,14 @@ public class DisjointSet {
      * 
      * @param monarchies A 2d int array of the dominions in each monarchy
      * in chronological order of secession.
+     * @param N
+     * @param M
+     * @param K
      * 
      * @return number of months separated
      */
-    public static int solve(int[][] monarchies){
-        
+    public static int solve(int[][] monarchies, int N, int M, int K){
+        return 0;
     }
 
 
@@ -80,7 +83,7 @@ public class DisjointSet {
                 }
             }
             
-            answers[i] = solve(monarchies);
+            answers[i] = solve(monarchies, N, M, K);
         }
         
         for(int i = 0; i < numProblems; i++){
