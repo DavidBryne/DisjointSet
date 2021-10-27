@@ -13,48 +13,52 @@
  * and keeps track of how many disjoint sets there are.
  */
 public class Empire {
+    //3d array of all nodes, starts out as null pointers and is updated as
+    //monarchies secede in backwards order.
     private Node[][][] monarchies;
     private int numSets;
     int N;
     int M;
     int K;
     
+    /**
+     * Constructor method
+     * 
+     * @param n n dimension
+     * @param m m dimension
+     * @param k k dimension
+     */
     public Empire(int n, int m, int k){
+        //Set dimensions
         N = n;
         M = m;
         K = k;
+        
+        //Initialize the 3d array size
         monarchies = new Node[n][m][k];
+        
+        //The number of disjoint sets starts as 0
         numSets = 0;
-        /*
-        System.out.println("N = " + n);
-        System.out.println("M = " + m);
-        System.out.println("K = " + k);
-        System.out.println("");
-        */
         
     }
     
+    /**
+     * Adds a set and unions with any adjacent sets
+     * 
+     * @param i The index of the node to add
+     */
     public void addSet(int i){
         
-        //System.out.println("i = " + i);
-        
+        //Convert the index to coordinates n, m, and k
         int n = i % N;
         int m = ((i-n)/N) % M;
         int k = (i - n - m * N)/ (M * N);
-        /*
-        System.out.println("n = " + n);
-        System.out.println("m = " + m);
-        System.out.println("k = " + k);
-        System.out.println("");
-        */
         
-       
-        
+        //Add to 3d array
         monarchies[n][m][k] = new Node();          
         DisjointSet.makeSet(monarchies[n][m][k]);
         numSets++;
         Node rep = monarchies[n][m][k];
-        rep = DisjointSet.findSet(monarchies[n][m][k]);
         
         //Check n direction
         if(n - 1 >= 0){
@@ -81,14 +85,24 @@ public class Empire {
         
     }
     
+    /**
+     * Unions sets and decrements disjoint set counter if conditions are
+     * correct
+     * 
+     * @param a Node 1
+     * @param b Node adjacent to Node 1
+     */
     private void checkAndUnion(Node a, Node b){
         Node parentA;
         Node parentB;
         
+        //If the nodes aren't null, continue
         if(a != null && b != null){
+            //Find the roots of the two sets
             parentA = DisjointSet.findSet(a);
             parentB = DisjointSet.findSet(b);
         
+            //If the root isn't already the same, union and decrement counter
             if(parentA != parentB){
                 DisjointSet.union(parentA, parentB);
                 numSets--;
@@ -96,10 +110,11 @@ public class Empire {
         }
     }
     
-    private int coordToIndex(int n, int m, int k){
-        return n + m * N + k * M * N;
-    }
-    
+    /**
+     * Returns the number of disjoint sets
+     * 
+     * @return the number of disjoint sets
+     */
     public int getNumSets(){
         return numSets;
     }
