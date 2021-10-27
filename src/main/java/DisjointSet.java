@@ -40,7 +40,6 @@ public class DisjointSet{
      * @param y root of the other set
      */
     public static void union(Node x, Node y) {
-
         if(x.getRank() > y.getRank()){
             y.setParent(x);
         }
@@ -118,7 +117,7 @@ public class DisjointSet{
         l = Integer.parseInt(strNums[3]);
 
         //Iterate over the definitions of the new monarchies and store the
-        //dominions of each monarcy in an array e.g. monarchies[0][1] would
+        //dominions of each monarchy in an array e.g. monarchies[0][1] would
         //represent the second dominion in the first monarchy.
         int[][] monarchies = new int[l][];
         for(int j = 0; j < l; j++){
