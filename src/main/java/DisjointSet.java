@@ -1,9 +1,6 @@
 import java.io.*;
 import java.util.*;
 
-//Index formula: let n = n index, N = max n, etc.
-//i = n + m * N + k * M * N
-
 /**
  * This class contains all the main methods of the Disjoint Set, as well as the sort algorithm
  *
@@ -18,27 +15,38 @@ import java.util.*;
  * Description: PLS COMPLETE ONCE YOU ARE DONE MODIFYING
  */
 
+//Index formula: let n = n index, N = max n, etc.
+//i = n + m * N + k * M * N
+
 public class DisjointSet{
 
-    //Make a new set
+    /**
+     * Makes a new disjoint set with one node as its own root
+     * 
+     * @param x Node to put in set
+     */
     public static void makeSet(Node x){
         x.setParent(x);
         x.setRank(0);
     }
-    //Combine two disjoint sets to create a new set
+    
+    /**
+     * Combines two disjoint sets into one set
+     * 
+     * @param x root of one set
+     * @param y root of the other set
+     */
     public static void union(Node x, Node y) {
-        Node x_parent = findSet(x);
-        Node y_parent = findSet(y);
 
-        if(x_parent.getRank() > y_parent.getRank()){
-            y_parent.setParent(x_parent);
+        if(x.getRank() > y.getRank()){
+            y.setParent(x);
         }
-        else if(x_parent.getRank() < y_parent.getRank()){
-            x_parent.setParent(y_parent);
+        else if(x.getRank() < y.getRank()){
+            x.setParent(y);
         }
         else{
-            x_parent.setParent(y_parent);
-            y_parent.setRank(y_parent.getRank() + 1);
+            x.setParent(y);
+            y.setRank(y.getRank() + 1);
         }
     }
 
