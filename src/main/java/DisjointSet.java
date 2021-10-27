@@ -29,6 +29,19 @@ public class DisjointSet {
         }
         return parent.get(x);
     }
+    
+    /**
+     * Solves a galactic breakup problem and returns the number of months
+     * COBOL was separated.
+     * 
+     * @param monarchies A 2d int array of the dominions in each monarchy
+     * in chronological order of secession.
+     * 
+     * @return number of months separated
+     */
+    public static int solve(int[][] monarchies){
+        
+    }
 
 
     public static void main(String[] args) throws IOException{
@@ -40,6 +53,7 @@ public class DisjointSet {
         
         //Get the number of problems to solve.
         int numProblems = Integer.parseInt(nextLine);
+        int[] answers = new int[numProblems];
         int N, M, K, l;
         for(int i = 0; i < numProblems; i++){            
             nextLine = stdin.readLine();
@@ -55,7 +69,22 @@ public class DisjointSet {
             //Iterate over the definitions of the new monarchies and store the
             //dominions of each monarcy in an array e.g. monarchies[0][1] would
             //represent the second dominion in the first monarchy.
+            int[][] monarchies = new int[l][];
+            for(int j = 0; j < l; j++){
+                nextLine = stdin.readLine();
+                String[] dominionsAndNum = nextLine.split(" ");
+                int num = Integer.parseInt(dominionsAndNum[0]);
+                monarchies[j] = new int[num];
+                for(int k = 1; k <= num; k++){
+                    monarchies[j][k-1] = Integer.parseInt(dominionsAndNum[k]);
+                }
+            }
             
+            answers[i] = solve(monarchies);
+        }
+        
+        for(int i = 0; i < numProblems; i++){
+            System.out.println(answers[i]);
         }
         
     }
