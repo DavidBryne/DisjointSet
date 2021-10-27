@@ -4,6 +4,20 @@ import java.util.*;
 //Index formula: let n = n index, N = max n, etc.
 //i = n + m * N + k * M * N
 
+/**
+ * This class contains all the main methods of the Disjoint Set, as well as the sort algorithm
+ *
+ * @author Samuel Copeland & David-Bryne Adedeji
+ * @version 1.0
+ * File: DisjointSet.java
+ * Created October 27, 2021
+ * @copyright Cedarville University, its Computer Science faculty, and the
+ * authors.
+ * Summary of Modifications:
+ *
+ * Description: PLS COMPLETE ONCE YOU ARE DONE MODIFYING
+ */
+
 public class DisjointSet{
 
     //Make a new set
